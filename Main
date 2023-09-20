@@ -1,0 +1,8 @@
+package com.mycompany.software_fazenda;
+
+public class Software_Fazenda {
+
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+    }
+}
