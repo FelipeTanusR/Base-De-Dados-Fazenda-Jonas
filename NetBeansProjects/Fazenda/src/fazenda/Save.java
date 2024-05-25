@@ -378,6 +378,13 @@ public class Save {
     public void addE(Estoque aux){
         this.listaE.add(aux);
     }
+    public void RemoverAnimal(Animal aux){
+        
+        this.lista.remove(aux);
+        
+        this.salvar(lista);
+    }
+    
     public void removeFG(FinanceiroGado aux){
         this.listaG.remove(aux);
         this.salvaFinanceiro(listaG, listaS, listaE);

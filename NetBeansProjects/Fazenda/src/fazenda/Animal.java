@@ -151,7 +151,7 @@ public class Animal implements Serializable{
         
         
         aux = ((double)ChronoUnit.DAYS.between(s1,s2)) /  30;
-        aux = Peso.round(aux,0);
+        aux = (double) Math.round(aux * 100) / 100;
         
         return aux;
     }
