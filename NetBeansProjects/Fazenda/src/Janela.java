@@ -469,7 +469,6 @@ public class Janela extends javax.swing.JFrame {
 
         jLayeredPane1.setBackground(new java.awt.Color(0, 0, 204));
         jLayeredPane1.setMinimumSize(new java.awt.Dimension(1270, 720));
-        jLayeredPane1.setPreferredSize(new java.awt.Dimension(1270, 720));
 
         Borda.setBackground(new java.awt.Color(0, 30, 60));
         Borda.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 2, true));
@@ -948,13 +947,11 @@ public class Janela extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(PesoMiB1)
+                            .addComponent(PesoMaxB1)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(17, 17, 17)
-                                .addComponent(PesoMiBJ1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(PesoMaxB1)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGap(17, 17, 17)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(PesoMiBJ1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(PesoMaxBJ1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -966,20 +963,17 @@ public class Janela extends javax.swing.JFrame {
                                     .addGap(28, 28, 28)
                                     .addComponent(StatusBJ1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(Raca3)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(Raca3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(RacaJ3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(VacinaP2)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(VacinaJP2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(Raca4)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(RacaJ4, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(RacaJ3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(VacinaP2)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(VacinaJP2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(Raca4)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(RacaJ4, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(GravidezB)
@@ -9898,6 +9892,9 @@ public class Janela extends javax.swing.JFrame {
 
     private void SalvarPS1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SalvarPS1MouseClicked
         // TODO add your handling code here:
+       
+        double peso;
+        String prenha, obs, PesoString;
         
         
         
@@ -9905,8 +9902,9 @@ public class Janela extends javax.swing.JFrame {
         
         try{
             DefaultTableModel tabela = (DefaultTableModel)TabelaPS5.getModel();
-
             SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
+            
+            
 
             ArrayList<Animal> lista = arquivo.getLista();
             int brinco;
@@ -9922,15 +9920,34 @@ public class Janela extends javax.swing.JFrame {
                         break;
                     }                
                 }
-                String p = String.valueOf(tabela.getValueAt(i, 5));
                 
-                obj.inserePesagem(Double.parseDouble(p), data);
-                obj.setPrenha(String.valueOf(tabela.getValueAt(i, 7)));
-                obj.setObs(String.valueOf(tabela.getValueAt(i, 8)));
+                
+                
+                if(!tabela.getValueAt(i, 5).equals("")){
+                    PesoString = String.valueOf(tabela.getValueAt(i, 5));
+                    peso = Double.parseDouble(PesoString);
+                    obj.inserePesagem(peso, data);
+                }
+                
+                
+                
+                if(!tabela.getValueAt(i, 8).equals("")){
+                    prenha = String.valueOf(tabela.getValueAt(i, 8));
+                    obj.setPrenha(prenha);
+                }
+                
+                
+                
+                if(!tabela.getValueAt(i, 9).equals("")){
+                    obs = String.valueOf(tabela.getValueAt(i, 9));
+                    obj.setObs(obs);
+                }
+                
+                
             }
             arquivo.salvar(lista);
             JOptionPane.showMessageDialog(this, "Atualização realizada com sucesso");
-        }catch(Exception e){
+       }catch(Exception e){
             JOptionPane.showMessageDialog(this, "Alguma informação possui um erro, tente novamente!");
  
         }
