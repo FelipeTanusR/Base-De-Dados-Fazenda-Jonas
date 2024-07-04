@@ -120,10 +120,23 @@ public class Janela extends javax.swing.JFrame {
         PesoMaxB1 = new javax.swing.JLabel();
         Aplicar1 = new javax.swing.JButton();
         Aplicar2 = new javax.swing.JButton();
+        Aplicar3 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jScrollPane4 = new javax.swing.JScrollPane();
         TabelaBusca = new javax.swing.JTable();
+        TelaPlanilhaFilhos = new javax.swing.JPanel();
+        jPanel13 = new javax.swing.JPanel();
+        DataPSJ4 = new javax.swing.JFormattedTextField();
+        VacinaAdicionar17 = new javax.swing.JButton();
+        BrincoJB6 = new javax.swing.JFormattedTextField();
+        BrincoB4 = new javax.swing.JLabel();
+        DataPS3 = new javax.swing.JLabel();
+        ImprimirPS14 = new javax.swing.JButton();
+        jScrollPane20 = new javax.swing.JScrollPane();
+        TabelaPS8 = new javax.swing.JTable();
+        SalvarPS4 = new javax.swing.JButton();
+        ImprimirPS15 = new javax.swing.JButton();
         TelaControle = new javax.swing.JPanel();
         RepC = new javax.swing.JTextField();
         BoiC = new javax.swing.JTextField();
@@ -462,7 +475,7 @@ public class Janela extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Software Fazenda");
-        setBackground(new java.awt.Color(255, 0, 153));
+        setBackground(new java.awt.Color(0, 51, 102));
         setBounds(new java.awt.Rectangle(0, 0, 1366, 1366));
         setMinimumSize(new java.awt.Dimension(1280, 720));
         setPreferredSize(new java.awt.Dimension(1280, 720));
@@ -843,6 +856,21 @@ public class Janela extends javax.swing.JFrame {
             }
         });
 
+        Aplicar3.setBackground(new java.awt.Color(102, 102, 102));
+        Aplicar3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        Aplicar3.setText("Desmama");
+        Aplicar3.setBorder(null);
+        Aplicar3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Aplicar3MouseClicked(evt);
+            }
+        });
+        Aplicar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Aplicar3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -898,10 +926,11 @@ public class Janela extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(PesoMaxB)
                             .addComponent(PesoMaxBJ, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Aplicar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Aplicar2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Aplicar2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Aplicar3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Aplicar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -982,7 +1011,9 @@ public class Janela extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(PesagemB, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(PesagemB, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Aplicar3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(PesagemB2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1029,7 +1060,7 @@ public class Janela extends javax.swing.JFrame {
             jTable2.getColumnModel().getColumn(2).setMaxWidth(100);
         }
 
-        TabelaBusca.setBackground(new java.awt.Color(204, 204, 204));
+        TabelaBusca.setBackground(new java.awt.Color(255, 255, 255));
         TabelaBusca.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 2, true));
         TabelaBusca.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         TabelaBusca.setModel(new javax.swing.table.DefaultTableModel(
@@ -1055,6 +1086,7 @@ public class Janela extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        TabelaBusca.setShowGrid(false);
         TabelaBusca.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TabelaBuscaMouseClicked(evt);
@@ -1089,6 +1121,230 @@ public class Janela extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+        );
+
+        TelaPlanilhaFilhos.setBackground(new java.awt.Color(0, 51, 102));
+
+        jPanel13.setBackground(new java.awt.Color(0, 30, 60));
+        jPanel13.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 2, true));
+
+        DataPSJ4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        try {
+            DataPSJ4.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        DataPSJ4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        DataPSJ4.setToolTipText("");
+        DataPSJ4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        DataPSJ4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DataPSJ4ActionPerformed(evt);
+            }
+        });
+
+        VacinaAdicionar17.setBackground(new java.awt.Color(102, 102, 102));
+        VacinaAdicionar17.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        VacinaAdicionar17.setText("Adicionar");
+        VacinaAdicionar17.setBorder(null);
+        VacinaAdicionar17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                VacinaAdicionar17MouseClicked(evt);
+            }
+        });
+        VacinaAdicionar17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VacinaAdicionar17ActionPerformed(evt);
+            }
+        });
+
+        BrincoJB6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        BrincoJB6.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+        BrincoJB6.setToolTipText("");
+        BrincoJB6.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        BrincoJB6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BrincoJB6ActionPerformed(evt);
+            }
+        });
+        BrincoJB6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                BrincoJB6KeyTyped(evt);
+            }
+        });
+
+        BrincoB4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        BrincoB4.setForeground(new java.awt.Color(204, 204, 204));
+        BrincoB4.setText("Brinco");
+
+        DataPS3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        DataPS3.setForeground(new java.awt.Color(204, 204, 204));
+        DataPS3.setText("Data");
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addComponent(BrincoJB6, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addComponent(VacinaAdicionar17, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BrincoB4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(DataPSJ4, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DataPS3))
+                .addGap(188, 188, 188))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BrincoB4)
+                    .addComponent(DataPS3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BrincoJB6, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(VacinaAdicionar17, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DataPSJ4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
+
+        ImprimirPS14.setBackground(new java.awt.Color(102, 102, 102));
+        ImprimirPS14.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        ImprimirPS14.setText("Imprimir");
+        ImprimirPS14.setBorder(null);
+        ImprimirPS14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ImprimirPS14MouseClicked(evt);
+            }
+        });
+        ImprimirPS14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ImprimirPS14ActionPerformed(evt);
+            }
+        });
+
+        TabelaPS8.setBackground(new java.awt.Color(255, 255, 255));
+        TabelaPS8.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 2, true));
+        TabelaPS8.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        TabelaPS8.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Brinco", "Data Nasc", "Brinco Mãe", "Sexo", "Conf", "Peso Anterior", "Peso Atual", "Cor", "Raça", "Observação"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, true, false, true, true, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        TabelaPS8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TabelaPS8MouseClicked(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                TabelaPS8MouseReleased(evt);
+            }
+        });
+        jScrollPane20.setViewportView(TabelaPS8);
+        if (TabelaPS8.getColumnModel().getColumnCount() > 0) {
+            TabelaPS8.getColumnModel().getColumn(0).setMinWidth(80);
+            TabelaPS8.getColumnModel().getColumn(0).setMaxWidth(80);
+            TabelaPS8.getColumnModel().getColumn(1).setMinWidth(100);
+            TabelaPS8.getColumnModel().getColumn(1).setMaxWidth(100);
+            TabelaPS8.getColumnModel().getColumn(2).setMinWidth(80);
+            TabelaPS8.getColumnModel().getColumn(2).setMaxWidth(80);
+            TabelaPS8.getColumnModel().getColumn(3).setMinWidth(80);
+            TabelaPS8.getColumnModel().getColumn(3).setMaxWidth(80);
+            TabelaPS8.getColumnModel().getColumn(4).setMinWidth(80);
+            TabelaPS8.getColumnModel().getColumn(4).setMaxWidth(80);
+            TabelaPS8.getColumnModel().getColumn(5).setMinWidth(80);
+            TabelaPS8.getColumnModel().getColumn(5).setMaxWidth(80);
+            TabelaPS8.getColumnModel().getColumn(6).setMinWidth(80);
+            TabelaPS8.getColumnModel().getColumn(6).setMaxWidth(80);
+            TabelaPS8.getColumnModel().getColumn(7).setMinWidth(100);
+            TabelaPS8.getColumnModel().getColumn(7).setMaxWidth(100);
+            TabelaPS8.getColumnModel().getColumn(8).setMinWidth(100);
+            TabelaPS8.getColumnModel().getColumn(8).setMaxWidth(100);
+        }
+
+        SalvarPS4.setBackground(new java.awt.Color(102, 102, 102));
+        SalvarPS4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        SalvarPS4.setText("Salvar");
+        SalvarPS4.setBorder(null);
+        SalvarPS4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SalvarPS4MouseClicked(evt);
+            }
+        });
+        SalvarPS4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalvarPS4ActionPerformed(evt);
+            }
+        });
+
+        ImprimirPS15.setBackground(new java.awt.Color(102, 102, 102));
+        ImprimirPS15.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        ImprimirPS15.setText("Remover");
+        ImprimirPS15.setBorder(null);
+        ImprimirPS15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ImprimirPS15MouseClicked(evt);
+            }
+        });
+        ImprimirPS15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ImprimirPS15ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout TelaPlanilhaFilhosLayout = new javax.swing.GroupLayout(TelaPlanilhaFilhos);
+        TelaPlanilhaFilhos.setLayout(TelaPlanilhaFilhosLayout);
+        TelaPlanilhaFilhosLayout.setHorizontalGroup(
+            TelaPlanilhaFilhosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TelaPlanilhaFilhosLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 958, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(TelaPlanilhaFilhosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ImprimirPS15, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ImprimirPS14, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SalvarPS4, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(197, Short.MAX_VALUE))
+        );
+        TelaPlanilhaFilhosLayout.setVerticalGroup(
+            TelaPlanilhaFilhosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TelaPlanilhaFilhosLayout.createSequentialGroup()
+                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(TelaPlanilhaFilhosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane20, javax.swing.GroupLayout.DEFAULT_SIZE, 556, Short.MAX_VALUE)
+                    .addGroup(TelaPlanilhaFilhosLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(SalvarPS4, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ImprimirPS15, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5)
+                        .addComponent(ImprimirPS14, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(102, 102, 102))
         );
 
         TelaControle.setBackground(new java.awt.Color(0, 51, 102));
@@ -1906,7 +2162,7 @@ public class Janela extends javax.swing.JFrame {
                         .addComponent(NovC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BezerraC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1591, Short.MAX_VALUE))
+                .addContainerGap(447, Short.MAX_VALUE))
             .addGroup(TelaControleLayout.createSequentialGroup()
                 .addGroup(TelaControleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(TelaControleLayout.createSequentialGroup()
@@ -2033,7 +2289,7 @@ public class Janela extends javax.swing.JFrame {
                 .addGroup(TelaControleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(RepNatC9, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Montas15, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
 
         TelaCadastro.setBackground(new java.awt.Color(0, 51, 102));
@@ -2252,7 +2508,7 @@ public class Janela extends javax.swing.JFrame {
         TelaCadastroLayout.setHorizontalGroup(
             TelaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TelaCadastroLayout.createSequentialGroup()
-                .addContainerGap(941, Short.MAX_VALUE)
+                .addContainerGap(205, Short.MAX_VALUE)
                 .addGroup(TelaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(TelaCadastroLayout.createSequentialGroup()
                         .addGroup(TelaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2283,7 +2539,7 @@ public class Janela extends javax.swing.JFrame {
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 708, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(Adicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(982, Short.MAX_VALUE))
+                        .addContainerGap(246, Short.MAX_VALUE))
                     .addGroup(TelaCadastroLayout.createSequentialGroup()
                         .addGroup(TelaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(RacaJ7, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2349,7 +2605,7 @@ public class Janela extends javax.swing.JFrame {
                 .addGroup(TelaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Adicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(354, Short.MAX_VALUE))
+                .addContainerGap(312, Short.MAX_VALUE))
         );
 
         TelaAnimalMacho.setBackground(new java.awt.Color(0, 51, 102));
@@ -3672,7 +3928,7 @@ public class Janela extends javax.swing.JFrame {
             }
         });
 
-        TabelaPeso.setBackground(new java.awt.Color(204, 204, 204));
+        TabelaPeso.setBackground(new java.awt.Color(255, 255, 255));
         TabelaPeso.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 2, true));
         TabelaPeso.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         TabelaPeso.setModel(new javax.swing.table.DefaultTableModel(
@@ -3707,9 +3963,6 @@ public class Janela extends javax.swing.JFrame {
             }
         });
         jScrollPane7.setViewportView(TabelaPeso);
-        if (TabelaPeso.getColumnModel().getColumnCount() > 0) {
-            TabelaPeso.getColumnModel().getColumn(3).setHeaderValue("GMD");
-        }
 
         jTable3.setBackground(new java.awt.Color(204, 204, 204));
         jTable3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 2, true));
@@ -3850,7 +4103,7 @@ public class Janela extends javax.swing.JFrame {
             }
         });
 
-        TabelaPS.setBackground(new java.awt.Color(204, 204, 204));
+        TabelaPS.setBackground(new java.awt.Color(255, 255, 255));
         TabelaPS.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 2, true));
         TabelaPS.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         TabelaPS.setModel(new javax.swing.table.DefaultTableModel(
@@ -3935,7 +4188,7 @@ public class Janela extends javax.swing.JFrame {
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TelaPesagemLayout.createSequentialGroup()
                 .addGap(103, 103, 103)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 887, Short.MAX_VALUE)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 1022, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(TelaPesagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ImprimirPS1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3951,7 +4204,7 @@ public class Janela extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(TelaPesagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 571, Short.MAX_VALUE)
                     .addGroup(TelaPesagemLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(SalvarPS, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4202,7 +4455,7 @@ public class Janela extends javax.swing.JFrame {
             }
         });
 
-        TabelaPeso1.setBackground(new java.awt.Color(204, 204, 204));
+        TabelaPeso1.setBackground(new java.awt.Color(255, 255, 255));
         TabelaPeso1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 2, true));
         TabelaPeso1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         TabelaPeso1.setModel(new javax.swing.table.DefaultTableModel(
@@ -4405,7 +4658,7 @@ public class Janela extends javax.swing.JFrame {
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
-        TabelaPS1.setBackground(new java.awt.Color(204, 204, 204));
+        TabelaPS1.setBackground(new java.awt.Color(255, 255, 255));
         TabelaPS1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 2, true));
         TabelaPS1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         TabelaPS1.setModel(new javax.swing.table.DefaultTableModel(
@@ -4620,7 +4873,7 @@ public class Janela extends javax.swing.JFrame {
             }
         });
 
-        TabelaPeso2.setBackground(new java.awt.Color(204, 204, 204));
+        TabelaPeso2.setBackground(new java.awt.Color(255, 255, 255));
         TabelaPeso2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 2, true));
         TabelaPeso2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         TabelaPeso2.setModel(new javax.swing.table.DefaultTableModel(
@@ -4682,7 +4935,7 @@ public class Janela extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TelaRepLayout.createSequentialGroup()
                         .addComponent(ImprimirP3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(88, 88, 88)))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         TelaFinanceiroGado.setBackground(new java.awt.Color(0, 51, 102));
@@ -4881,7 +5134,7 @@ public class Janela extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
-        TabelaPS2.setBackground(new java.awt.Color(204, 204, 204));
+        TabelaPS2.setBackground(new java.awt.Color(255, 255, 255));
         TabelaPS2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 2, true));
         TabelaPS2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         TabelaPS2.setModel(new javax.swing.table.DefaultTableModel(
@@ -5214,7 +5467,7 @@ public class Janela extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
-        TabelaPS3.setBackground(new java.awt.Color(204, 204, 204));
+        TabelaPS3.setBackground(new java.awt.Color(255, 255, 255));
         TabelaPS3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 2, true));
         TabelaPS3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         TabelaPS3.setModel(new javax.swing.table.DefaultTableModel(
@@ -5547,7 +5800,7 @@ public class Janela extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
-        TabelaPS4.setBackground(new java.awt.Color(204, 204, 204));
+        TabelaPS4.setBackground(new java.awt.Color(255, 255, 255));
         TabelaPS4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 2, true));
         TabelaPS4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         TabelaPS4.setModel(new javax.swing.table.DefaultTableModel(
@@ -5715,7 +5968,7 @@ public class Janela extends javax.swing.JFrame {
                         .addGap(34, 34, 34)
                         .addComponent(VacinaAdicionar15, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(BrincoB2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 538, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 716, Short.MAX_VALUE)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(DataPSJ2, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(DataPS1))
@@ -5751,7 +6004,7 @@ public class Janela extends javax.swing.JFrame {
             }
         });
 
-        TabelaPS5.setBackground(new java.awt.Color(204, 204, 204));
+        TabelaPS5.setBackground(new java.awt.Color(255, 255, 255));
         TabelaPS5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 2, true));
         TabelaPS5.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         TabelaPS5.setModel(new javax.swing.table.DefaultTableModel(
@@ -5799,8 +6052,11 @@ public class Janela extends javax.swing.JFrame {
             TabelaPS5.getColumnModel().getColumn(4).setMaxWidth(80);
             TabelaPS5.getColumnModel().getColumn(5).setMinWidth(80);
             TabelaPS5.getColumnModel().getColumn(5).setMaxWidth(80);
-            TabelaPS5.getColumnModel().getColumn(6).setMinWidth(80);
-            TabelaPS5.getColumnModel().getColumn(6).setMaxWidth(80);
+            TabelaPS5.getColumnModel().getColumn(6).setMinWidth(100);
+            TabelaPS5.getColumnModel().getColumn(6).setMaxWidth(100);
+            TabelaPS5.getColumnModel().getColumn(7).setMinWidth(100);
+            TabelaPS5.getColumnModel().getColumn(7).setMaxWidth(100);
+            TabelaPS5.getColumnModel().getColumn(8).setHeaderValue("Prenhez Atual");
         }
 
         SalvarPS1.setBackground(new java.awt.Color(102, 102, 102));
@@ -5854,7 +6110,7 @@ public class Janela extends javax.swing.JFrame {
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(TelaMaesEFIlhasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane17, javax.swing.GroupLayout.DEFAULT_SIZE, 586, Short.MAX_VALUE)
+                    .addComponent(jScrollPane17, javax.swing.GroupLayout.DEFAULT_SIZE, 556, Short.MAX_VALUE)
                     .addGroup(TelaMaesEFIlhasLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(SalvarPS1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -5968,7 +6224,7 @@ public class Janela extends javax.swing.JFrame {
             }
         });
 
-        TabelaPS6.setBackground(new java.awt.Color(204, 204, 204));
+        TabelaPS6.setBackground(new java.awt.Color(255, 255, 255));
         TabelaPS6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 2, true));
         TabelaPS6.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         TabelaPS6.setModel(new javax.swing.table.DefaultTableModel(
@@ -6181,7 +6437,7 @@ public class Janela extends javax.swing.JFrame {
             }
         });
 
-        TabelaPS7.setBackground(new java.awt.Color(204, 204, 204));
+        TabelaPS7.setBackground(new java.awt.Color(255, 255, 255));
         TabelaPS7.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 2, true));
         TabelaPS7.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         TabelaPS7.setModel(new javax.swing.table.DefaultTableModel(
@@ -6320,7 +6576,7 @@ public class Janela extends javax.swing.JFrame {
             .addGroup(TelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(TelaVacinas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(TelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(TelaSanidade, javax.swing.GroupLayout.DEFAULT_SIZE, 2764, Short.MAX_VALUE))
+                .addComponent(TelaSanidade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(TelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(TelaRep, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(TelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -6338,6 +6594,8 @@ public class Janela extends javax.swing.JFrame {
                     .addContainerGap()
                     .addComponent(TelaAuxiliar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap()))
+            .addGroup(TelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(TelaPlanilhaFilhos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         TelaLayout.setVerticalGroup(
             TelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -6357,7 +6615,7 @@ public class Janela extends javax.swing.JFrame {
             .addGroup(TelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(TelaVacinas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(TelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(TelaSanidade, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE))
+                .addComponent(TelaSanidade, javax.swing.GroupLayout.DEFAULT_SIZE, 778, Short.MAX_VALUE))
             .addGroup(TelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(TelaRep, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(TelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -6375,6 +6633,8 @@ public class Janela extends javax.swing.JFrame {
                     .addContainerGap()
                     .addComponent(TelaAuxiliar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap()))
+            .addGroup(TelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(TelaPlanilhaFilhos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLayeredPane1.setLayer(Borda, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -6424,6 +6684,21 @@ public class Janela extends javax.swing.JFrame {
 
     private void Cadastro1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cadastro1MouseClicked
         // TODO add your handling code here:
+        
+        BrincoJ.setValue(null);
+        BrincoPaiJ.setValue(null);
+        BrincoMaeJ.setValue(null);
+        PesoIJ.setValue(null);
+        OrigemJ.setSelectedIndex(0);
+        PelagemJ.setSelectedIndex(0);
+        TipoJ.setSelectedIndex(0);
+        RacaJ.setSelectedIndex(0);
+        NascimentoJ.setValue(null);
+        CompraJ.setValue(null);
+        ObsJ.setText(null);
+        RacaJ7.setSelectedIndex(0);
+            
+            
         TelaCadastro.setVisible(true);
         TelaBusca.setVisible(false);
         TelaControle.setVisible(false);
@@ -6439,6 +6714,10 @@ public class Janela extends javax.swing.JFrame {
         TelaEstoque.setVisible(false);
         TelaMaesEFIlhas.setVisible(false);
         TelaTrocaLote.setVisible(false);
+        TelaPlanilhaFilhos.setVisible(false);
+        
+        
+        
 
     }//GEN-LAST:event_Cadastro1MouseClicked
 
@@ -6478,6 +6757,7 @@ public class Janela extends javax.swing.JFrame {
         TelaEstoque.setVisible(false);
         TelaMaesEFIlhas.setVisible(false);
         TelaTrocaLote.setVisible(false);
+        TelaPlanilhaFilhos.setVisible(false);
 
 
 
@@ -6750,6 +7030,7 @@ public class Janela extends javax.swing.JFrame {
         TelaEstoque.setVisible(false);
         TelaMaesEFIlhas.setVisible(false);
         TelaTrocaLote.setVisible(false);
+        TelaPlanilhaFilhos.setVisible(false);
 
 
     }//GEN-LAST:event_ControleMouseClicked
@@ -7900,8 +8181,10 @@ public class Janela extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         try{
+            TabelaPeso.setShowGrid(true);
             TabelaPeso.print();
-           
+            TabelaPeso.setShowGrid(false);
+
         }catch (Exception e){
             JOptionPane.showMessageDialog(null,e);
         }
@@ -7940,6 +8223,7 @@ public class Janela extends javax.swing.JFrame {
         TelaEstoque.setVisible(false);
         TelaMaesEFIlhas.setVisible(false);
         TelaTrocaLote.setVisible(false);
+        TelaPlanilhaFilhos.setVisible(false);
         
         carregaPesos();
         
@@ -7974,6 +8258,7 @@ public class Janela extends javax.swing.JFrame {
         TelaEstoque.setVisible(false);
         TelaMaesEFIlhas.setVisible(false);
         TelaTrocaLote.setVisible(false);
+        TelaPlanilhaFilhos.setVisible(false);
         
         carregaVacinas();
         
@@ -8008,6 +8293,7 @@ public class Janela extends javax.swing.JFrame {
         TelaEstoque.setVisible(false);
         TelaMaesEFIlhas.setVisible(false);
         TelaTrocaLote.setVisible(false);
+        TelaPlanilhaFilhos.setVisible(false);
         
         carregaVacinas();
     }//GEN-LAST:event_SanidadeFJActionPerformed
@@ -8040,6 +8326,7 @@ public class Janela extends javax.swing.JFrame {
         TelaEstoque.setVisible(false);
         TelaMaesEFIlhas.setVisible(false);
         TelaTrocaLote.setVisible(false);
+        TelaPlanilhaFilhos.setVisible(false);
         
         
         carregaPesos();
@@ -8119,6 +8406,7 @@ public class Janela extends javax.swing.JFrame {
             TelaEstoque.setVisible(false);
             TelaMaesEFIlhas.setVisible(false);
             TelaTrocaLote.setVisible(false);
+            TelaPlanilhaFilhos.setVisible(false);
     }//GEN-LAST:event_PesagemBMouseClicked
 
     private void PesagemBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PesagemBActionPerformed
@@ -8134,7 +8422,9 @@ public class Janela extends javax.swing.JFrame {
 
         
         try{
+            TabelaPS.setShowGrid(true);
             TabelaPS.print();
+            TabelaPS.setShowGrid(false);
         }catch (Exception e){
             JOptionPane.showMessageDialog(null,e);
         }
@@ -8249,7 +8539,9 @@ public class Janela extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         try{
+            TabelaPeso1.setShowGrid(true);
             TabelaPeso1.print();
+            TabelaPeso1.setShowGrid(false);
         }catch (Exception e){
             JOptionPane.showMessageDialog(null,e);
         }
@@ -8585,6 +8877,7 @@ public class Janela extends javax.swing.JFrame {
         TelaEstoque.setVisible(false);
         TelaMaesEFIlhas.setVisible(false);
         TelaTrocaLote.setVisible(false);
+        TelaPlanilhaFilhos.setVisible(false);
     }//GEN-LAST:event_PesagemB2MouseClicked
 
     private void PesagemB2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PesagemB2ActionPerformed
@@ -8712,7 +9005,9 @@ public class Janela extends javax.swing.JFrame {
     private void ImprimirP2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImprimirP2MouseClicked
         // TODO add your handling code here:
         try{
+            TabelaPS1.setShowGrid(true);
             TabelaPS1.print();
+            TabelaPS1.setShowGrid(false);
         }catch (Exception e){
             JOptionPane.showMessageDialog(null,e);
         }
@@ -8959,7 +9254,9 @@ public class Janela extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         try{
+            TabelaPeso2.setShowGrid(true);
             TabelaPeso2.print();
+            TabelaPeso2.setShowGrid(false);
         }catch (Exception e){
             JOptionPane.showMessageDialog(null,e);
         }
@@ -9054,6 +9351,7 @@ public class Janela extends javax.swing.JFrame {
         TelaEstoque.setVisible(false);
         TelaMaesEFIlhas.setVisible(false);
         TelaTrocaLote.setVisible(false);
+        TelaPlanilhaFilhos.setVisible(false);
         
         
         
@@ -9293,7 +9591,9 @@ public class Janela extends javax.swing.JFrame {
     private void ImprimirP5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImprimirP5ActionPerformed
         // TODO add your handling code here:
         try{
+            TabelaPS2.setShowGrid(true);
             TabelaPS2.print();
+            TabelaPS2.setShowGrid(false);
         }catch (Exception e){
             JOptionPane.showMessageDialog(null,e);
         }
@@ -9452,7 +9752,9 @@ public class Janela extends javax.swing.JFrame {
     private void ImprimirP6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImprimirP6ActionPerformed
         // TODO add your handling code here:
         try{
+            TabelaPS3.setShowGrid(true);
             TabelaPS3.print();
+            TabelaPS3.setShowGrid(false);
         }catch (Exception e){
             JOptionPane.showMessageDialog(null,e);
         }
@@ -9620,7 +9922,9 @@ public class Janela extends javax.swing.JFrame {
     private void ImprimirP7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImprimirP7ActionPerformed
         // TODO add your handling code here:
         try{
+            TabelaPS4.setShowGrid(true);
             TabelaPS4.print();
+            TabelaPS4.setShowGrid(false);
         }catch (Exception e){
             JOptionPane.showMessageDialog(null,e);
         }
@@ -9847,6 +10151,7 @@ public class Janela extends javax.swing.JFrame {
         TelaEstoque.setVisible(false);
         TelaMaesEFIlhas.setVisible(true); 
         TelaTrocaLote.setVisible(false);
+        TelaPlanilhaFilhos.setVisible(false);
             
             
         
@@ -9855,111 +10160,6 @@ public class Janela extends javax.swing.JFrame {
     private void Aplicar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aplicar1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Aplicar1ActionPerformed
-
-    private void ImprimirPS8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImprimirPS8MouseClicked
-        // TODO add your handling code here:
-        try{
-            TabelaPS5.print();
-        }catch (Exception e){
-            JOptionPane.showMessageDialog(null,e);
-        }
-    }//GEN-LAST:event_ImprimirPS8MouseClicked
-
-    private void ImprimirPS8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImprimirPS8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ImprimirPS8ActionPerformed
-
-    private void TabelaPS5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelaPS5MouseClicked
-        // TODO add your handling code here:
-       TableColumn sportColumn = TabelaPS5.getColumnModel().getColumn(8);
-
-    JComboBox comboBox = new JComboBox();
-    comboBox.addItem("Prenha");
-    comboBox.addItem("Vazia");
-    comboBox.addItem("1 Perdão");
-    comboBox.addItem("2 Perdão");
-    comboBox.addItem("Parto");
-    comboBox.addItem("Aborto");
-    comboBox.addItem("Descarte");
-
-    sportColumn.setCellEditor(new DefaultCellEditor(comboBox));
-        
-    }//GEN-LAST:event_TabelaPS5MouseClicked
-
-    private void TabelaPS5MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelaPS5MouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TabelaPS5MouseReleased
-
-    private void SalvarPS1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SalvarPS1MouseClicked
-        // TODO add your handling code here:
-       
-        double peso;
-        String prenha, obs, PesoString;
-        
-        
-        
-        String data = DataPSJ2.getText();
-        
-        try{
-            DefaultTableModel tabela = (DefaultTableModel)TabelaPS5.getModel();
-            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
-            
-            
-
-            ArrayList<Animal> lista = arquivo.getLista();
-            int brinco;
-
-            Animal obj = new Animal();
-            Peso ps = new Peso();
-            for(int i = 0;i<tabela.getRowCount();i++){
-                String b = String.valueOf(tabela.getValueAt(i, 0));
-                brinco = Integer.parseInt(b);
-                for(int j=0;j<lista.size();j++){
-                    obj = lista.get(j);
-                    if(obj.getBrinco()==brinco){
-                        break;
-                    }                
-                }
-                
-                
-                
-                if(!tabela.getValueAt(i, 5).equals("")){
-                    PesoString = String.valueOf(tabela.getValueAt(i, 5));
-                    peso = Double.parseDouble(PesoString);
-                    obj.inserePesagem(peso, data);
-                }
-                
-                
-                
-                if(!tabela.getValueAt(i, 8).equals("")){
-                    prenha = String.valueOf(tabela.getValueAt(i, 8));
-                    obj.setPrenha(prenha);
-                }
-                
-                
-                
-                if(!tabela.getValueAt(i, 9).equals("")){
-                    obs = String.valueOf(tabela.getValueAt(i, 9));
-                    obj.setObs(obs);
-                }
-                
-                
-            }
-            arquivo.salvar(lista);
-            JOptionPane.showMessageDialog(this, "Atualização realizada com sucesso");
-       }catch(Exception e){
-            JOptionPane.showMessageDialog(this, "Alguma informação possui um erro, tente novamente!");
- 
-        }
-    }//GEN-LAST:event_SalvarPS1MouseClicked
-
-    private void SalvarPS1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarPS1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SalvarPS1ActionPerformed
-
-    private void DataPSJ2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DataPSJ2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DataPSJ2ActionPerformed
 
     private void TipoJ3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TipoJ3ActionPerformed
         // TODO add your handling code here:
@@ -9972,25 +10172,6 @@ public class Janela extends javax.swing.JFrame {
     private void TelaAnimalFemeaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TelaAnimalFemeaMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_TelaAnimalFemeaMouseClicked
-
-    private void ImprimirPS9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImprimirPS9MouseClicked
-        // TODO add your handling code here:
-        DefaultTableModel tabela = (DefaultTableModel)TabelaPS5.getModel();
-        
-        int[] selectedRow = TabelaPS5.getSelectedRows();
-        int del=1;
-        for(int j=0; j<selectedRow.length; j++){
-            tabela.removeRow(selectedRow[j]);
-            if(j<selectedRow.length-1){
-                selectedRow[j+1] = selectedRow[j+1]-del;
-                del = del+1;
-    }
-}
-    }//GEN-LAST:event_ImprimirPS9MouseClicked
-
-    private void ImprimirPS9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImprimirPS9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ImprimirPS9ActionPerformed
 
     private void RacaJ7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RacaJ7ActionPerformed
         // TODO add your handling code here:
@@ -10061,6 +10242,7 @@ public class Janela extends javax.swing.JFrame {
                 TelaEstoque.setVisible(false);
                 TelaMaesEFIlhas.setVisible(false);
                 TelaTrocaLote.setVisible(true);
+                TelaPlanilhaFilhos.setVisible(false);
     }//GEN-LAST:event_Aplicar2MouseClicked
 
     private void Aplicar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aplicar2ActionPerformed
@@ -10070,7 +10252,9 @@ public class Janela extends javax.swing.JFrame {
     private void ImprimirPS10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImprimirPS10MouseClicked
         // TODO add your handling code here:
         try{
+            TabelaPS6.setShowGrid(true);
             TabelaPS6.print();
+            TabelaPS6.setShowGrid(false);
         }catch (Exception e){
             JOptionPane.showMessageDialog(null,e);
         }
@@ -10203,123 +10387,6 @@ public class Janela extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_VacinaAdicionar14ActionPerformed
 
-    private void VacinaAdicionar15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VacinaAdicionar15MouseClicked
-        // TODO add your handling code here:
-       
-        
-        
-        
-        DefaultTableModel tabela = (DefaultTableModel)TabelaPS5.getModel();
-        
-        
-        
-        
-        ArrayList<Peso> p = new ArrayList<Peso>();
-        ArrayList<Vacina> v = new ArrayList<Vacina>();
-        Vacina vac;
-        Peso ps = new Peso();
-        
-        int TemH = 0;
-        int temF = 0;
-        int idade = 0;
-        int brinco = 0;
-        String nasc ="";
-        Animal objF = new Animal();
-        
-        int Brinco = Integer.parseInt(BrincoJB4.getText());
-        ArrayList<Animal> lista = arquivo.getLista();
-        Animal obj = new Animal();
-        for(int i = 0; i<lista.size(); i++){
-            obj = lista.get(i);
-            if(obj.getBrinco()==Brinco){
-                break;
-            }
-        }
-        
-        
-         v = obj.getVacinas();
-                for(int j = 0; j<v.size();j++){
-                    vac = v.get(j);
-                    if(vac.getNome().equals("Aplicação de Hormônio Progesterona")){
-                        TemH = 1;
-                    }
-                }
-                temF=0;
-                idade = 100;
-                brinco = 0;
-                nasc = "";
-               
-                if(obj.getSexo().equals("Fêmea")&&obj.getStatus()==1&&!obj.getTipo().equals("Bezerra")){
-                    p = obj.getPesagem();
-                    ps = p.get(p.size()-1);
-                    for(int j = 0; j<lista.size();j++){
-                        objF = lista.get(j);
-                        if(objF.getBrincoMae() == obj.getBrinco() && objF.getIdade()<=1){
-                            temF=1;
-                            nasc = sdf.format(objF.getDataNascimento());
-                            brinco = objF.getBrinco();
-                        }
-                    }
-                    
-                    
-                    Object[] inserir = new Object[]{
-                        obj.getBrinco(),
-                        String.valueOf(obj.getIdade()),
-                        "",
-                        "",
-                        String.valueOf(ps.getPeso()),
-                        "",
-                        "Não",
-                        obj.getPrenha(),
-                        "",
-                        ""                            
-                    };
-                    if(TemH==1){
-                        inserir[6] = "Sim";
-                    }
-                    if(temF==1){
-                        inserir[2]=String.valueOf(brinco);
-                        inserir[3]=nasc;
-                    }
-                    tabela.addRow(inserir);
-
-                    
-                
-                }
-            
-            
-            
-            
-        
-        
-        
-        
-        
-        
-          
-        
-    }//GEN-LAST:event_VacinaAdicionar15MouseClicked
-
-    private void VacinaAdicionar15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VacinaAdicionar15ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_VacinaAdicionar15ActionPerformed
-
-    private void BrincoJB4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BrincoJB4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BrincoJB4ActionPerformed
-
-    private void BrincoJB4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BrincoJB4KeyTyped
-        // TODO add your handling code here:
-        char c = evt.getKeyChar();
-        if (!((c >= '0') && (c <= '9') || (c == KeyEvent.VK_BACK_SPACE) || (c == KeyEvent.VK_DELETE))) {
-            getToolkit().beep();
-            evt.consume();
-        }
-        if(BrincoJB4.getText().length()>=5){
-            evt.consume();
-        }
-    }//GEN-LAST:event_BrincoJB4KeyTyped
-
     private void DataPSJ3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DataPSJ3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DataPSJ3ActionPerformed
@@ -10371,6 +10438,520 @@ public class Janela extends javax.swing.JFrame {
     private void ImprimirPS13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImprimirPS13ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ImprimirPS13ActionPerformed
+
+    private void ImprimirPS9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImprimirPS9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ImprimirPS9ActionPerformed
+
+    private void ImprimirPS9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImprimirPS9MouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel tabela = (DefaultTableModel)TabelaPS5.getModel();
+
+        int[] selectedRow = TabelaPS5.getSelectedRows();
+        int del=1;
+        for(int j=0; j<selectedRow.length; j++){
+            tabela.removeRow(selectedRow[j]);
+            if(j<selectedRow.length-1){
+                selectedRow[j+1] = selectedRow[j+1]-del;
+                del = del+1;
+            }
+        }
+    }//GEN-LAST:event_ImprimirPS9MouseClicked
+
+    private void SalvarPS1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarPS1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SalvarPS1ActionPerformed
+
+    private void SalvarPS1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SalvarPS1MouseClicked
+        // TODO add your handling code here:
+
+        double peso;
+        String prenha, obs, PesoString;
+
+        String data = DataPSJ2.getText();
+
+        try{
+            DefaultTableModel tabela = (DefaultTableModel)TabelaPS5.getModel();
+            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+
+            ArrayList<Animal> lista = arquivo.getLista();
+            int brinco;
+
+            Animal obj = new Animal();
+            Peso ps = new Peso();
+            for(int i = 0;i<tabela.getRowCount();i++){
+                String b = String.valueOf(tabela.getValueAt(i, 0));
+                brinco = Integer.parseInt(b);
+                for(int j=0;j<lista.size();j++){
+                    obj = lista.get(j);
+                    if(obj.getBrinco()==brinco){
+                        break;
+                    }
+                }
+
+                if(!tabela.getValueAt(i, 5).equals("")){
+                    PesoString = String.valueOf(tabela.getValueAt(i, 5));
+                    peso = Double.parseDouble(PesoString);
+                    obj.inserePesagem(peso, data);
+                }
+
+                if(!tabela.getValueAt(i, 8).equals("")){
+                    prenha = String.valueOf(tabela.getValueAt(i, 8));
+                    obj.setPrenha(prenha);
+                }
+
+                if(!tabela.getValueAt(i, 9).equals("")){
+                    obs = String.valueOf(tabela.getValueAt(i, 9));
+                    obj.setObs(obs);
+                }
+
+            }
+            arquivo.salvar(lista);
+            JOptionPane.showMessageDialog(this, "Atualização realizada com sucesso");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Alguma informação possui um erro, tente novamente!");
+
+        }
+    }//GEN-LAST:event_SalvarPS1MouseClicked
+
+    private void TabelaPS5MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelaPS5MouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TabelaPS5MouseReleased
+
+    private void TabelaPS5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelaPS5MouseClicked
+        // TODO add your handling code here:
+        TableColumn sportColumn = TabelaPS5.getColumnModel().getColumn(8);
+
+        JComboBox comboBox = new JComboBox();
+        comboBox.addItem("Prenha");
+        comboBox.addItem("Vazia");
+        comboBox.addItem("1 Perdão");
+        comboBox.addItem("2 Perdão");
+        comboBox.addItem("Parto");
+        comboBox.addItem("Aborto");
+        comboBox.addItem("Descarte");
+
+        sportColumn.setCellEditor(new DefaultCellEditor(comboBox));
+
+    }//GEN-LAST:event_TabelaPS5MouseClicked
+
+    private void ImprimirPS8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImprimirPS8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ImprimirPS8ActionPerformed
+
+    private void ImprimirPS8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImprimirPS8MouseClicked
+        // TODO add your handling code here:
+        try{
+            TabelaPS5.setShowGrid(true);
+            TabelaPS5.print();
+            TabelaPS5.setShowGrid(false);
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }//GEN-LAST:event_ImprimirPS8MouseClicked
+
+    private void BrincoJB4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BrincoJB4KeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (!((c >= '0') && (c <= '9') || (c == KeyEvent.VK_BACK_SPACE) || (c == KeyEvent.VK_DELETE))) {
+            getToolkit().beep();
+            evt.consume();
+        }
+        if(BrincoJB4.getText().length()>=5){
+            evt.consume();
+        }
+    }//GEN-LAST:event_BrincoJB4KeyTyped
+
+    private void BrincoJB4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BrincoJB4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BrincoJB4ActionPerformed
+
+    private void VacinaAdicionar15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VacinaAdicionar15ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_VacinaAdicionar15ActionPerformed
+
+    private void VacinaAdicionar15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VacinaAdicionar15MouseClicked
+        // TODO add your handling code here:
+
+        DefaultTableModel tabela = (DefaultTableModel)TabelaPS5.getModel();
+
+        ArrayList<Peso> p = new ArrayList<Peso>();
+        ArrayList<Vacina> v = new ArrayList<Vacina>();
+        Vacina vac;
+        Peso ps = new Peso();
+
+        int TemH = 0;
+        int temF = 0;
+        int idade = 0;
+        int brinco = 0;
+        String nasc ="";
+        Animal objF = new Animal();
+
+        int Brinco = Integer.parseInt(BrincoJB4.getText());
+        ArrayList<Animal> lista = arquivo.getLista();
+        Animal obj = new Animal();
+        for(int i = 0; i<lista.size(); i++){
+            obj = lista.get(i);
+            if(obj.getBrinco()==Brinco){
+                break;
+            }
+        }
+
+        v = obj.getVacinas();
+        for(int j = 0; j<v.size();j++){
+            vac = v.get(j);
+            if(vac.getNome().equals("Aplicação de Hormônio Progesterona")){
+                TemH = 1;
+            }
+        }
+        temF=0;
+        idade = 100;
+        brinco = 0;
+        nasc = "";
+
+        if(obj.getSexo().equals("Fêmea")&&obj.getStatus()==1&&!obj.getTipo().equals("Bezerra")){
+            p = obj.getPesagem();
+            ps = p.get(p.size()-1);
+            for(int j = 0; j<lista.size();j++){
+                objF = lista.get(j);
+                if(objF.getBrincoMae() == obj.getBrinco() && objF.getIdade()<=1){
+                    temF=1;
+                    nasc = sdf.format(objF.getDataNascimento());
+                    brinco = objF.getBrinco();
+                }
+            }
+
+            Object[] inserir = new Object[]{
+                obj.getBrinco(),
+                String.valueOf(obj.getIdade()),
+                "",
+                "",
+                String.valueOf(ps.getPeso()),
+                "",
+                "Não",
+                obj.getPrenha(),
+                "",
+                ""
+            };
+            if(TemH==1){
+                inserir[6] = "Sim";
+            }
+            if(temF==1){
+                inserir[2]=String.valueOf(brinco);
+                inserir[3]=nasc;
+            }
+            tabela.addRow(inserir);
+
+        }
+
+    }//GEN-LAST:event_VacinaAdicionar15MouseClicked
+
+    private void DataPSJ2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DataPSJ2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DataPSJ2ActionPerformed
+
+    private void DataPSJ4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DataPSJ4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DataPSJ4ActionPerformed
+
+    private void VacinaAdicionar17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VacinaAdicionar17MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_VacinaAdicionar17MouseClicked
+
+    private void VacinaAdicionar17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VacinaAdicionar17ActionPerformed
+        // TODO add your handling code here:
+        
+         try{
+        
+            DefaultTableModel tabela = (DefaultTableModel)TabelaPS8.getModel();
+
+            ArrayList<Peso> p = new ArrayList<Peso>();
+            Peso ps = new Peso();
+            String vazia ="", ob ="";
+            Animal objM = new Animal();
+
+            int Brinco = Integer.parseInt(BrincoJB6.getText());
+            ArrayList<Animal> lista = arquivo.getLista();
+            Animal obj = new Animal();
+            for(int i = 0; i<lista.size(); i++){
+                obj = lista.get(i);
+                if(obj.getBrinco()==Brinco){
+                    break;
+                }
+            }
+
+            for(int i = 0; i<lista.size(); i++){
+                objM = lista.get(i);
+                if(obj.getBrincoMae()==objM.getBrinco()){
+                    ob = String.valueOf(objM.getBrinco());
+                    break;
+                }else{
+                    ob = vazia;
+                }
+            }
+
+            p = obj.getPesagem();
+            ps = p.get(p.size()-1);
+
+            Object[] inserir = new Object[]{
+                                    //brinco peso pesoAnterior VPeso GMD
+                                    obj.getBrinco(),
+                                    sdf.format(obj.getDataNascimento()),
+                                    obj,
+                                    obj.getSexo(),
+                                    vazia,
+                                    String.valueOf(ps.getPeso()),
+                                    vazia,
+                                    obj.getPelagem(),
+                                    obj.getRaca(),
+                                    obj.getObs()                                
+                                };
+                                if(obj.getPelagem().equals("Selecionar")){
+                                    inserir[7] = vazia;
+                                }
+                                if(obj.getRaca().equals("Selecionar")||obj.getRaca().equals("Outros")){
+                                    inserir[8] = vazia;
+                                }
+                                tabela.addRow(inserir);
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+        
+    }//GEN-LAST:event_VacinaAdicionar17ActionPerformed
+
+    private void BrincoJB6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BrincoJB6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BrincoJB6ActionPerformed
+
+    private void BrincoJB6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BrincoJB6KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BrincoJB6KeyTyped
+
+    private void ImprimirPS14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImprimirPS14MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ImprimirPS14MouseClicked
+
+    private void ImprimirPS14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImprimirPS14ActionPerformed
+        // TODO add your handling code here:
+        
+        try{
+            TabelaPS8.setShowGrid(true);
+            TabelaPS8.print();
+            TabelaPS8.setShowGrid(false);
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null,"Erro ao inserir animal");
+        }
+    }//GEN-LAST:event_ImprimirPS14ActionPerformed
+
+    private void TabelaPS8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelaPS8MouseClicked
+        // TODO add your handling code here:
+        int col = TabelaPS8.getSelectedColumn();
+        int row = TabelaPS8.getSelectedRow();
+        
+        if (col == 7){
+            TableColumn sportColumn = TabelaPS8.getColumnModel().getColumn(7);
+
+            JComboBox comboBox = new JComboBox();
+            comboBox.addItem("Selecionar");
+            comboBox.addItem("Amarelo");
+            comboBox.addItem("Araçá");
+            comboBox.addItem("Baio");
+            comboBox.addItem("Branco");
+            comboBox.addItem("Preto");
+            comboBox.addItem("Vermelho");
+            sportColumn.setCellEditor(new DefaultCellEditor(comboBox));
+
+        }
+        else if (col == 8){
+            TableColumn sportColumn = TabelaPS8.getColumnModel().getColumn(8);
+
+            JComboBox comboBox = new JComboBox();
+            comboBox.addItem("Selecionar");
+            comboBox.addItem("Bonsmara");
+            comboBox.addItem("Montana");
+            comboBox.addItem("Nelore");
+            comboBox.addItem("Senepol");
+            comboBox.addItem("Aberdeen Angus");
+            comboBox.addItem("Outros");
+            sportColumn.setCellEditor(new DefaultCellEditor(comboBox));
+
+        }
+        
+        
+    }//GEN-LAST:event_TabelaPS8MouseClicked
+
+    private void TabelaPS8MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelaPS8MouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TabelaPS8MouseReleased
+
+    private void SalvarPS4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SalvarPS4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SalvarPS4MouseClicked
+
+    private void SalvarPS4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarPS4ActionPerformed
+        // TODO add your handling code here:
+        
+        double peso;
+        String cor, raca, obs, PesoString;
+
+        String data = DataPSJ4.getText();
+
+        try{
+            DefaultTableModel tabela = (DefaultTableModel)TabelaPS8.getModel();
+            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+
+            ArrayList<Animal> lista = arquivo.getLista();
+            int brinco;
+
+            Animal obj = new Animal();
+            Peso ps = new Peso();
+            for(int i = 0;i<tabela.getRowCount();i++){
+                String b = String.valueOf(tabela.getValueAt(i, 0));
+                brinco = Integer.parseInt(b);
+                for(int j=0;j<lista.size();j++){
+                    obj = lista.get(j);
+                    if(obj.getBrinco()==brinco){
+                        break;
+                    }
+                }
+
+                if(!tabela.getValueAt(i, 6).equals("")){
+                    PesoString = String.valueOf(tabela.getValueAt(i, 6));
+                    peso = Double.parseDouble(PesoString);
+                    obj.inserePesagem(peso, data);
+                }
+
+                if(!tabela.getValueAt(i, 7).equals("")){
+                    cor = String.valueOf(tabela.getValueAt(i, 7));
+                    obj.setPelagem(cor);
+                }
+
+                if(!tabela.getValueAt(i, 8).equals("")){
+                    raca = String.valueOf(tabela.getValueAt(i, 8));
+                    obj.setRaca(raca);
+                }
+                if(!tabela.getValueAt(i, 9).equals("")){
+                    obs = String.valueOf(tabela.getValueAt(i, 9));
+                    obj.setObs(obs);
+                }
+
+            }
+            arquivo.salvar(lista);
+            JOptionPane.showMessageDialog(this, "Atualização realizada com sucesso");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Alguma informação possui um erro, tente novamente!");
+
+        }
+    }//GEN-LAST:event_SalvarPS4ActionPerformed
+
+    private void ImprimirPS15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImprimirPS15MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ImprimirPS15MouseClicked
+
+    private void ImprimirPS15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImprimirPS15ActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel tabela = (DefaultTableModel)TabelaPS8.getModel();
+
+        int[] selectedRow = TabelaPS8.getSelectedRows();
+        int del=1;
+        for(int j=0; j<selectedRow.length; j++){
+            tabela.removeRow(selectedRow[j]);
+            if(j<selectedRow.length-1){
+                selectedRow[j+1] = selectedRow[j+1]-del;
+                del = del+1;
+            }
+        }
+    }//GEN-LAST:event_ImprimirPS15ActionPerformed
+
+    private void Aplicar3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Aplicar3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Aplicar3MouseClicked
+
+    private void Aplicar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aplicar3ActionPerformed
+        // TODO add your handling code here:
+        
+        DefaultTableModel tabela = (DefaultTableModel)TabelaPS8.getModel();
+        String vazia = "";
+        ArrayList<Animal> lista = arquivo.getLista();
+        Animal filho = new Animal();
+        Animal obj = new Animal();
+        tabela.setRowCount(0);
+        int b;
+        String ob = vazia;
+        
+        for(int i = 0; i<TabelaBusca.getRowCount();i++){
+            
+            b = Integer.parseInt(String.valueOf(TabelaBusca.getValueAt(i,1)));
+            System.out.println(b);
+            
+            for(int k = 0; k<lista.size(); k++){
+                filho = lista.get(k);
+                if(filho.getBrinco() == b ){
+
+                    for(int j = 0; j<lista.size(); j++ ){
+                    obj = lista.get(j);
+                        if(obj.getBrinco() == filho.getBrincoMae()){
+                            ob = String.valueOf(obj.getBrinco());
+                            break;
+                        }else{
+                            ob = vazia;
+                        }
+                    }
+                    Object[] inserir = new Object[]{
+                                //brinco peso pesoAnterior VPeso GMD
+                                filho.getBrinco(),
+                                sdf.format(filho.getDataNascimento()),
+                                ob,
+                                filho.getSexo(),
+                                vazia,
+                                TabelaBusca.getValueAt(i,4),
+                                vazia,
+                                filho.getPelagem(),
+                                filho.getRaca(),
+                                filho.getObs()                                
+                            };
+                            if(filho.getPelagem().equals("Selecionar")){
+                                inserir[7] = vazia;
+                            }
+                            if(filho.getRaca().equals("Selecionar")||filho.getRaca().equals("Outros")){
+                                inserir[8] = vazia;
+                            }
+                            tabela.addRow(inserir);
+                }
+            }
+        
+            
+               
+            
+            
+        
+            
+            //TabelaPS.setAutoCreateRowSorter(true);
+    
+            
+        }
+        
+        
+        BrincoJB6.setValue(null);
+        DataPSJ4.setValue(null);
+        TelaCadastro.setVisible(false);
+        TelaBusca.setVisible(false);
+        TelaControle.setVisible(false);
+        TelaAnimalMacho.setVisible(false);
+        TelaAnimalFemea.setVisible(false);
+        TelaPeso.setVisible(false);
+        TelaPesagem.setVisible(false);
+        TelaVacinas.setVisible(false);
+        TelaSanidade.setVisible(false);
+        TelaRep.setVisible(false);
+        TelaFinanceiroGado.setVisible(false);
+        TelaFinanceiroSeringueira.setVisible(false);
+        TelaEstoque.setVisible(false);
+        TelaMaesEFIlhas.setVisible(false);
+        TelaTrocaLote.setVisible(false);
+        TelaPlanilhaFilhos.setVisible(true);
+        
+    }//GEN-LAST:event_Aplicar3ActionPerformed
     
     
     public void carregarE(){
@@ -10427,6 +11008,7 @@ public class Janela extends javax.swing.JFrame {
         TelaEstoque.setVisible(true);
         TelaMaesEFIlhas.setVisible(false);
         TelaTrocaLote.setVisible(false);
+        TelaPlanilhaFilhos.setVisible(false);
         
         
             
@@ -10498,6 +11080,7 @@ public class Janela extends javax.swing.JFrame {
         TelaEstoque.setVisible(false);
         TelaMaesEFIlhas.setVisible(false);
         TelaTrocaLote.setVisible(false);
+        TelaPlanilhaFilhos.setVisible(false);
         
         
             
@@ -10576,6 +11159,7 @@ public class Janela extends javax.swing.JFrame {
         TelaEstoque.setVisible(false);
         TelaMaesEFIlhas.setVisible(false);
         TelaTrocaLote.setVisible(false);
+        TelaPlanilhaFilhos.setVisible(false);
         
         
             
@@ -10642,6 +11226,7 @@ public class Janela extends javax.swing.JFrame {
                 TelaEstoque.setVisible(false);
                 TelaMaesEFIlhas.setVisible(false);
                 TelaTrocaLote.setVisible(false);
+                TelaPlanilhaFilhos.setVisible(false);
         
                 String aux;
                 Double aux2;
@@ -10789,6 +11374,7 @@ public class Janela extends javax.swing.JFrame {
                 TelaEstoque.setVisible(false);
                 TelaMaesEFIlhas.setVisible(false);
                 TelaTrocaLote.setVisible(false);
+                TelaPlanilhaFilhos.setVisible(false);
                 
 
                 Double aux2;
@@ -11097,6 +11683,10 @@ public class Janela extends javax.swing.JFrame {
                 for(int i = 0;i<lista.size();i++){
                     obj = lista.get(i);  
                     
+                    if (obj.getIdade()<= 0){
+                        
+                        obj.setDataNascimento("01/01/2024");
+                    }
                     
                     
                     p = obj.getPesagem();
@@ -11233,6 +11823,7 @@ public class Janela extends javax.swing.JFrame {
                 tab.TelaMaesEFIlhas.setVisible(false);
                 tab.TelaTrocaLote.setVisible(false);
                 tab.TelaAuxiliar.setVisible(false);
+                tab.TelaPlanilhaFilhos.setVisible(false);
                  
         //pega a lista de animais do arquivo txt
                 
@@ -11264,6 +11855,7 @@ public class Janela extends javax.swing.JFrame {
     private javax.swing.JButton Aplicar;
     private javax.swing.JButton Aplicar1;
     private javax.swing.JButton Aplicar2;
+    private javax.swing.JButton Aplicar3;
     private javax.swing.JLabel BRep;
     private javax.swing.JFormattedTextField BRepJ;
     private javax.swing.JTextField BezerraC;
@@ -11286,6 +11878,7 @@ public class Janela extends javax.swing.JFrame {
     private javax.swing.JLabel BrincoB1;
     private javax.swing.JLabel BrincoB2;
     private javax.swing.JLabel BrincoB3;
+    private javax.swing.JLabel BrincoB4;
     private javax.swing.JFormattedTextField BrincoJ;
     private javax.swing.JFormattedTextField BrincoJ1;
     private javax.swing.JFormattedTextField BrincoJ2;
@@ -11294,6 +11887,7 @@ public class Janela extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField BrincoJB3;
     private javax.swing.JFormattedTextField BrincoJB4;
     private javax.swing.JFormattedTextField BrincoJB5;
+    private javax.swing.JFormattedTextField BrincoJB6;
     private javax.swing.JFormattedTextField BrincoJP;
     private javax.swing.JFormattedTextField BrincoJP1;
     private javax.swing.JFormattedTextField BrincoJP2;
@@ -11325,10 +11919,12 @@ public class Janela extends javax.swing.JFrame {
     private javax.swing.JLabel DataPS;
     private javax.swing.JLabel DataPS1;
     private javax.swing.JLabel DataPS2;
+    private javax.swing.JLabel DataPS3;
     private javax.swing.JFormattedTextField DataPSJ;
     private javax.swing.JFormattedTextField DataPSJ1;
     private javax.swing.JFormattedTextField DataPSJ2;
     private javax.swing.JFormattedTextField DataPSJ3;
+    private javax.swing.JFormattedTextField DataPSJ4;
     private javax.swing.JLabel DataV;
     private javax.swing.JLabel DataV1;
     private javax.swing.JLabel DataV2;
@@ -11383,6 +11979,8 @@ public class Janela extends javax.swing.JFrame {
     private javax.swing.JButton ImprimirPS11;
     private javax.swing.JButton ImprimirPS12;
     private javax.swing.JButton ImprimirPS13;
+    private javax.swing.JButton ImprimirPS14;
+    private javax.swing.JButton ImprimirPS15;
     private javax.swing.JButton ImprimirPS2;
     private javax.swing.JButton ImprimirPS3;
     private javax.swing.JButton ImprimirPS4;
@@ -11495,6 +12093,7 @@ public class Janela extends javax.swing.JFrame {
     private javax.swing.JButton SalvarPS1;
     private javax.swing.JButton SalvarPS2;
     private javax.swing.JButton SalvarPS3;
+    private javax.swing.JButton SalvarPS4;
     private javax.swing.JButton SanidadeFJ;
     private javax.swing.JButton SanidadeFJ1;
     private javax.swing.JButton SanidadeMJ;
@@ -11521,6 +12120,7 @@ public class Janela extends javax.swing.JFrame {
     private javax.swing.JTable TabelaPS5;
     private javax.swing.JTable TabelaPS6;
     private javax.swing.JTable TabelaPS7;
+    private javax.swing.JTable TabelaPS8;
     private javax.swing.JTable TabelaPeso;
     private javax.swing.JTable TabelaPeso1;
     private javax.swing.JTable TabelaPeso2;
@@ -11537,6 +12137,7 @@ public class Janela extends javax.swing.JFrame {
     private javax.swing.JPanel TelaMaesEFIlhas;
     private javax.swing.JPanel TelaPesagem;
     private javax.swing.JPanel TelaPeso;
+    private javax.swing.JPanel TelaPlanilhaFilhos;
     private javax.swing.JPanel TelaRep;
     private javax.swing.JPanel TelaSanidade;
     private javax.swing.JPanel TelaTrocaLote;
@@ -11567,6 +12168,7 @@ public class Janela extends javax.swing.JFrame {
     private javax.swing.JButton VacinaAdicionar14;
     private javax.swing.JButton VacinaAdicionar15;
     private javax.swing.JButton VacinaAdicionar16;
+    private javax.swing.JButton VacinaAdicionar17;
     private javax.swing.JButton VacinaAdicionar2;
     private javax.swing.JButton VacinaAdicionar3;
     private javax.swing.JButton VacinaAdicionar4;
@@ -11602,6 +12204,7 @@ public class Janela extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -11622,6 +12225,7 @@ public class Janela extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane18;
     private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane20;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
