@@ -27,7 +27,7 @@ public class Indice {
     
     public double taxaPrenhez(int monta){
         int x = 0;
-        for(int i = 0; i < tamanhoL - 1; i++){
+        for(int i = 0; i < lista.size() - 1; i++){
             if(lista.get(i).getSexo().equals("Fêmea")&&lista.get(i).getPrenha().equals("Prenha")){
                 x++;
             }
@@ -51,25 +51,11 @@ public class Indice {
     public double taxaMortalidade(int index){
         Date data = new Date();
         LocalDate data2 = convertToLocalDateViaInstant(data);
+        data2.minusMonths(index);
         
-        switch(index){
-            
-            //1 mês
-            case 1: {
-                
-                data2.minusMonths(1);
-            }
-            case 2: {
-                data2.minusYears(1);
-            }
-            case 3:{
-                
-                data2.minusYears(5);
-            }
-        }
         
         int x = 0;
-        for(int i = 0; i < tamanhoL; i++){
+        for(int i = 0; i < lista.size(); i++){
             
             if(convertToLocalDateViaInstant(lista.get(i).getDataSaida()).isBefore(data2))
                 {
@@ -78,7 +64,7 @@ public class Indice {
                     }
             }
         }
-        return (x * 100) / tamanhoL;
+        return x;
     }
     
     public double taxaDescarte(int index){
@@ -146,18 +132,22 @@ public class Indice {
         return (x * 100) / tamanhoL;
     }
     
-    public double taxaNatalidade(int monta){
-        int meses = 9;
+    public double taxaNatalidade(int pmin, int pmax){
         int x = 0;
+        
+        float idadeMin = 0+pmin;
+        float idadeMax = 0+pmax;
         Date data = new Date();
         LocalDate data2 = convertToLocalDateViaInstant(data);
-        data2.minusMonths(meses);
+        data2.minusMonths(pmin);
+        LocalDate data3 = convertToLocalDateViaInstant(data);
+        data3.minusMonths(pmax);
         for(int i = 0; i < tamanhoL ; i++){
-            if(convertToLocalDateViaInstant(lista.get(i).getDataNascimento()).isBefore(data2)){
+            if(lista.get(i).getIdade()>=idadeMin && lista.get(i).getIdade()<=idadeMax){
                 x++;
             }
         }
-        return x * 100 / monta;
+        return x ;
     }
     
     public double relacaoDesmame(){

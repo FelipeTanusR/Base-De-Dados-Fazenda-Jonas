@@ -204,6 +204,7 @@ public class Animal implements Serializable{
         }else{
             try{
                 this.dataNascimento = sdf.parse(data);
+                System.out.println(sdf.parse(data));
             }catch(ParseException e)
             {
                 System.out.println("erro: " + e.getMessage());
