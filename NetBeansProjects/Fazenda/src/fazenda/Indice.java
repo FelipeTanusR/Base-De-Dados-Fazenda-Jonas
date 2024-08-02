@@ -6,6 +6,7 @@ package fazenda;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Calendar;
@@ -48,20 +49,34 @@ public class Indice {
         return x * 100/ monta;
     }
     
-    public double taxaMortalidade(int index){
-        Date data = new Date();
-        LocalDate data2 = convertToLocalDateViaInstant(data);
-        data2.minusMonths(index);
+    public double taxaMortalidade(int pmin, int pmax){
+        float idadeMin = 0+pmin;
+        float idadeMax = 0+pmax;
+        double aux;
+        
+        Date hoje = new Date();
+        LocalDate s2 = convertToLocalDateViaInstant(hoje);
+        
         
         
         int x = 0;
         for(int i = 0; i < lista.size(); i++){
             
-            if(convertToLocalDateViaInstant(lista.get(i).getDataSaida()).isBefore(data2))
+            LocalDate s1 = convertToLocalDateViaInstant(lista.get(i).getDataSaida());
+        
+        
+            aux = ((double)ChronoUnit.DAYS.between(s1,s2)) /  30;
+            aux = (double) Math.round(aux * 100) / 100;
+            
+            if(aux>=idadeMin && aux<=idadeMax)
                 {
-                    if(lista.get(i).getStatus() == 4){
-                    x++;
+                    System.out.println(aux);
+                    if(lista.get(i).getTipo().equals("Bezerro")||lista.get(i).getTipo().equals("Bezerra")){
+                        if(lista.get(i).getStatus() == 4){
+                            x++;
+                        }
                     }
+                    
             }
         }
         return x;

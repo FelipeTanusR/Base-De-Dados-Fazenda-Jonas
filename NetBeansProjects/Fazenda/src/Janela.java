@@ -182,6 +182,10 @@ public class Janela extends javax.swing.JFrame {
         Montas9 = new javax.swing.JTextField();
         BrincoJB8 = new javax.swing.JFormattedTextField();
         PesagemB3 = new javax.swing.JButton();
+        RepNatC6 = new javax.swing.JTextField();
+        Montas13 = new javax.swing.JTextField();
+        RepNatC3 = new javax.swing.JTextField();
+        Montas4 = new javax.swing.JTextField();
         TelaCadastro = new javax.swing.JPanel();
         NascimentoJ = new javax.swing.JFormattedTextField();
         BrincoJ = new javax.swing.JFormattedTextField();
@@ -1929,6 +1933,60 @@ public class Janela extends javax.swing.JFrame {
             }
         });
 
+        RepNatC6.setEditable(false);
+        RepNatC6.setBackground(new java.awt.Color(255, 255, 255));
+        RepNatC6.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        RepNatC6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        RepNatC6.setText(".");
+        RepNatC6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 2, true));
+        RepNatC6.setPreferredSize(new java.awt.Dimension(95, 26));
+        RepNatC6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RepNatC6ActionPerformed(evt);
+            }
+        });
+
+        Montas13.setEditable(false);
+        Montas13.setBackground(new java.awt.Color(0, 30, 60));
+        Montas13.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        Montas13.setForeground(new java.awt.Color(204, 204, 204));
+        Montas13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Montas13.setText("Mortalidade");
+        Montas13.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 2, true));
+        Montas13.setPreferredSize(new java.awt.Dimension(95, 26));
+        Montas13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Montas13ActionPerformed(evt);
+            }
+        });
+
+        RepNatC3.setEditable(false);
+        RepNatC3.setBackground(new java.awt.Color(255, 255, 255));
+        RepNatC3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        RepNatC3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        RepNatC3.setText(".");
+        RepNatC3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 2, true));
+        RepNatC3.setPreferredSize(new java.awt.Dimension(95, 26));
+        RepNatC3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RepNatC3ActionPerformed(evt);
+            }
+        });
+
+        Montas4.setEditable(false);
+        Montas4.setBackground(new java.awt.Color(0, 30, 60));
+        Montas4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        Montas4.setForeground(new java.awt.Color(204, 204, 204));
+        Montas4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Montas4.setText("Quantidade");
+        Montas4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 2, true));
+        Montas4.setPreferredSize(new java.awt.Dimension(95, 26));
+        Montas4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Montas4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout TelaControleLayout = new javax.swing.GroupLayout(TelaControle);
         TelaControle.setLayout(TelaControleLayout);
         TelaControleLayout.setHorizontalGroup(
@@ -1938,10 +1996,6 @@ public class Janela extends javax.swing.JFrame {
                     .addGroup(TelaControleLayout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addGroup(TelaControleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(TelaControleLayout.createSequentialGroup()
-                                .addComponent(Montas3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(RepNatC2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(TelaControleLayout.createSequentialGroup()
                                 .addGroup(TelaControleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(Montas, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
@@ -1991,27 +2045,7 @@ public class Janela extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(NovTotC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(BezerraTotC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(TelaControleLayout.createSequentialGroup()
-                                        .addComponent(BrincoJB2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(PesagemB1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(44, 44, 44)
-                                        .addGroup(TelaControleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(TelaControleLayout.createSequentialGroup()
-                                                .addComponent(Montas12, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(RepNatC5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(TelaControleLayout.createSequentialGroup()
-                                                .addComponent(Montas8, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(BrincoJB7, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(Montas9, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(BrincoJB8, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(PesagemB3, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                        .addComponent(BezerraTotC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(TelaControleLayout.createSequentialGroup()
                                 .addGap(107, 107, 107)
                                 .addComponent(RepC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2026,7 +2060,41 @@ public class Janela extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(NovC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(BezerraC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(BezerraC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(TelaControleLayout.createSequentialGroup()
+                                .addGroup(TelaControleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Montas3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Montas4, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(TelaControleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(RepNatC2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(RepNatC3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(TelaControleLayout.createSequentialGroup()
+                                .addGap(111, 111, 111)
+                                .addComponent(BrincoJB2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(PesagemB1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(44, 44, 44)
+                                .addGroup(TelaControleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(TelaControleLayout.createSequentialGroup()
+                                        .addComponent(Montas8, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(BrincoJB7, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Montas9, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(BrincoJB8, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(PesagemB3, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(TelaControleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(TelaControleLayout.createSequentialGroup()
+                                            .addComponent(Montas13, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(RepNatC6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(TelaControleLayout.createSequentialGroup()
+                                            .addComponent(Montas12, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(RepNatC5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                     .addGroup(TelaControleLayout.createSequentialGroup()
                         .addGap(391, 391, 391)
                         .addComponent(SexoB2)))
@@ -2097,7 +2165,13 @@ public class Janela extends javax.swing.JFrame {
                     .addComponent(Montas3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(RepNatC5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Montas12, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(456, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(TelaControleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RepNatC6, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Montas13, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RepNatC3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Montas4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(411, Short.MAX_VALUE))
         );
 
         TelaCadastro.setBackground(new java.awt.Color(0, 51, 102));
@@ -6813,7 +6887,10 @@ public class Janela extends javax.swing.JFrame {
         BrincoJB8.setValue(null);
 
         RepNatC2.setText(null);
+        RepNatC3.setText(null);
         RepNatC5.setText(null);
+        RepNatC6.setText(null);
+
 
 
  
@@ -8511,6 +8588,9 @@ public class Janela extends javax.swing.JFrame {
         
         Indice ind = new Indice(arquivo.getLista());
         
+        ArrayList<Animal> lista = arquivo.getLista();
+        int qtd = 0;
+        
         if(BrincoJB2.getText().equals("")){
             JOptionPane.showMessageDialog(null,"Escolha algum parâmetro para calcular as Taxas.");
         }else{
@@ -8526,8 +8606,15 @@ public class Janela extends javax.swing.JFrame {
            // aux = Peso.round(aux,2);
             aux2 = decfor.format(aux);
             RepNatC2.setText(aux2 + "%");
+            
+            //qtd
+            for(int i = 0; i<lista.size(); i++){
+                if(lista.get(i).getSexo().equals("Fêmea")&& lista.get(i).getPrenha().equals("Prenha")){
+                    qtd++;
+                }      
+            }
            
-           
+            RepNatC3.setText(decfor.format(qtd));
             
         }
         
@@ -10691,6 +10778,13 @@ public class Janela extends javax.swing.JFrame {
            // aux = Peso.round(aux,2);
             aux2 = decfor.format(aux);
             RepNatC5.setText(aux2);
+            
+            
+            //mort
+            aux = ind.taxaMortalidade(Integer.valueOf(BrincoJB7.getText()), Integer.valueOf(BrincoJB8.getText()));
+            
+            aux2 = decfor.format(aux);
+            RepNatC6.setText(aux2);
            
             
         }
@@ -10705,6 +10799,22 @@ public class Janela extends javax.swing.JFrame {
     private void PesagemB3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PesagemB3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PesagemB3ActionPerformed
+
+    private void RepNatC6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RepNatC6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RepNatC6ActionPerformed
+
+    private void Montas13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Montas13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Montas13ActionPerformed
+
+    private void RepNatC3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RepNatC3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RepNatC3ActionPerformed
+
+    private void Montas4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Montas4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Montas4ActionPerformed
     
     
     public void carregarE(){
@@ -11746,7 +11856,9 @@ public class Janela extends javax.swing.JFrame {
     private javax.swing.JButton ImprimirPS9;
     private javax.swing.JTextField Montas;
     private javax.swing.JTextField Montas12;
+    private javax.swing.JTextField Montas13;
     private javax.swing.JTextField Montas3;
+    private javax.swing.JTextField Montas4;
     private javax.swing.JTextField Montas8;
     private javax.swing.JTextField Montas9;
     private javax.swing.JLabel Nascimento;
@@ -11830,7 +11942,9 @@ public class Janela extends javax.swing.JFrame {
     private javax.swing.JTextField RepC;
     private javax.swing.JTextField RepNatC;
     private javax.swing.JTextField RepNatC2;
+    private javax.swing.JTextField RepNatC3;
     private javax.swing.JTextField RepNatC5;
+    private javax.swing.JTextField RepNatC6;
     private javax.swing.JTextField RepObC;
     private javax.swing.JTextField RepTotC;
     private javax.swing.JButton SalvarPS;
